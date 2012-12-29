@@ -95,6 +95,7 @@ public class YahooCalendarScribeDemo {
             //use username and password to login to post
             client.executeMethod(put);
             //use scribe oauth to authenticate
+            runoauth(c.toString(), uri);
             return href;
         } finally {
             if (put != null) {

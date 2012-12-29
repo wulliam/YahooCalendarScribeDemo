@@ -92,8 +92,9 @@ public class YahooCalendarScribeDemo {
             put = new PutMethod(href);
             put.addRequestHeader("If-None-Match", "*");
             put.setRequestEntity(new StringRequestEntity(c.toString(), "text/calendar", "UTF-8"));
-            //client.executeMethod(put);
-            runoauth(c.toString(), uri);
+            //use username and password to login to post
+            client.executeMethod(put);
+            //use scribe oauth to authenticate
             return href;
         } finally {
             if (put != null) {
